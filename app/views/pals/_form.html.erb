@@ -1,0 +1,52 @@
+<%= form_for(@pal) do |f| %>
+  <% if @pal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pal.errors.count, "error") %> prohibited this pal from being saved:</h2>
+
+      <ul>
+      <% @pal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label "State or Province" %><br>
+    <%= f.text_field :stateprov, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :bio %><br>
+    <%= f.text_area :bio, class: "form-control", rows: "10" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :photo %> <br>
+    <%= f.file_field :avatar %>
+  </div>
+
+
+  <div class="actions form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+
+<% end %>
+
+
+ 

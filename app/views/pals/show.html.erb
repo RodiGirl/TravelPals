@@ -1,0 +1,45 @@
+<% if notice != nil %>
+  <p id="notice" class="alert alert-success" role="alert">
+    <%= notice %>
+  </p>
+<% end %>
+
+
+  <%= image_tag @pal.avatar_file_name, :height => "200px"%>  
+ <!-- image_tag @pal.avatar.url(:thumb)  -->
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @pal.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @pal.city %>
+</p>
+
+<p>
+  <strong>Stateprov:</strong>
+  <%= @pal.stateprov %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @pal.country %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @pal.bio %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @pal.rating %>
+</p>
+
+<%= link_to 'Edit', edit_pal_path(@pal) %> |
+<%= link_to 'Back', pals_path %>
+
+
