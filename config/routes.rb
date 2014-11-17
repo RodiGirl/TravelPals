@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :pals
 
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   get 'become' => 'welcome#become'
   get 'find' => 'welcome#find'
   get 'about' => 'welcome#about'
+  get 'showusers' => 'welcome#showusers'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

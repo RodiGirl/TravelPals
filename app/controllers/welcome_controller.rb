@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
-  def index
    
+  def index
+   @users = User.all
   end
 
   def how
@@ -13,5 +14,9 @@ class WelcomeController < ApplicationController
   end
 
   def about
+  end
+
+  def showusers 
+    @users = User.all
   end
 end

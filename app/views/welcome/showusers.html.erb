@@ -1,0 +1,19 @@
+<h1>Show Users</h1>
+
+<table border='1' style="width:100%">
+  <tr>
+    <td><strong>ID</strong></td>
+    <td><strong>Email</strong></td> 
+    <td><strong>First Name</strong></td>
+    <td><strong>Last Name</strong></td>
+  </tr>
+  <tr>
+  	<% @users.each do |user| %>
+    <td><%= user.id %></td>
+    <td><%= user.email %></td> 
+    <td><%= user.first_name %></td>
+    <td><%= user.last_name %></td>
+   
+  </tr>
+   <% end %>	
+</table>

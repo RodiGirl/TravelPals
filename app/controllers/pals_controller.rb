@@ -1,4 +1,5 @@
 class PalsController < ApplicationController
+before_action :authenticate_user!
   before_action :set_pal, only: [:show, :edit, :update, :destroy]
 
   # GET /pals
@@ -11,7 +12,7 @@ class PalsController < ApplicationController
     #else
     #  @pals = Pal.where(country: params[:country].titleize)
     #end
-
+    @user = User.all
       @pals = Pal.all
         
       @my_countries = []
