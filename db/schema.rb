@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116215122) do
+ActiveRecord::Schema.define(version: 20141118020311) do
 
   create_table "pals", force: true do |t|
     t.string   "name"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20141116215122) do
     t.datetime "updated_at"
     t.string   "first_name"
     t.string   "last_name"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

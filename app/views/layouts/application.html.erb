@@ -36,11 +36,18 @@
         <li><%= link_to "Find a Pal", find_path, class: "navbar-nav" %></li>
         <li><%= link_to "About Us", about_path, class: "navbar-nav" %></li>
         <li><%= link_to "Top Rated Pals", pals_path, class: "navbar-nav" %></li>
-            <li><% if user_signed_in? %>
-          <%= link_to "#{current_user.first_name}, want to sign out?",destroy_user_session_path, method: :delete, class: "button", id: "signout" %>
-            <% end %>
-        </li>
+          
       </ul>
+      <div class="navbar-right">
+    <% if user_signed_in? %>
+      You are logged in as <%= link_to "#{current_user.first_name}", edit_user_registration_path %> | 
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      You are not logged in.
+      <%= link_to "Log in", user_session_path %> or
+      <%= link_to "Sign Up", new_user_registration_path %>
+    <% end %>
+  </div>
            
      
 

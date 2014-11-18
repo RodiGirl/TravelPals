@@ -7,6 +7,7 @@
 
 
 
+
 <h1><%= current_user.first_name %> meet our Pals!</h1>
 
 <ul class="nav nav-pills" role="tablist">
@@ -52,11 +53,15 @@
 
          <p>Bio: <%= pal.bio %></p>
        
-         <div class="btn-group">
-          <%= link_to 'Show', pal, class: "btn btn-default" %>
-          <%= link_to 'Edit', edit_pal_path(pal), class: "btn btn-default" %>
-          <%= link_to 'Destroy', pal, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
-         </div>
+         <% if can? :update, pal %>
+            <div class="btn-group">
+            <%= link_to 'Show', pal, class: "btn btn-default" %>
+            <%= link_to 'Edit', edit_pal_path(pal), class: "btn btn-default" %>
+            <%= link_to 'Destroy', pal, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+          </div>
+          <% end %> 
+
+         
         </div>
       </div>
     </div>
